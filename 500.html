@@ -42,7 +42,7 @@
     padding: 0.7rem 1.5rem;
     border-radius: 10px;
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     user-select: all;
   }
   button {
@@ -72,12 +72,14 @@
       <h1>服务器内部错误</h1>
       <p>抱歉，服务器暂时无法处理您的请求。请稍后再试。</p>
       <div class="code">错误代码：500 - Internal Server Error</div>
+      ::CLOUDFLARE_ERROR_500S_BOX::
       <button onclick="reloadPage()">重试</button>
     </div>
     <div id="en" class="content" style="display:none;">
       <h1>Internal Server Error</h1>
       <p>Sorry, the server is temporarily unable to handle your request. Please try again later.</p>
       <div class="code">Error Code: 500 - Internal Server Error</div>
+      ::CLOUDFLARE_ERROR_500S_BOX::
       <button onclick="reloadPage()">Retry</button>
     </div>
     <div style="margin-top: 1.5rem;">
