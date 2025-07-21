@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>访问已被阻止 / Access Denied</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #8e0e00, #1f1c18);
+      color: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(0,0,0,0.5);
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .code {
+      font-family: monospace;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      background: #e74c3c;
+      border: none;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c0392b;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="zh" class="content">
+      <h1>访问已被阻止</h1>
+      <p>你已被 Cloudflare WAF 拦截，可能是由于请求行为异常、安全策略或其他原因。</p>
+      <div class="code">错误类型：WAF 拦截<br />Error Type: WAF Block</div>
+      <p>如果你认为这是错误，请联系网站管理员。</p>
+    </div>
+    <div id="en" class="content" style="display:none;">
+      <h1>Access Denied</h1>
+      <p>Your request has been blocked by Cloudflare WAF due to suspicious behavior or security rules.</p>
+      <div class="code">Error Type: WAF Block</div>
+      <p>If you believe this is an error, please contact the website administrator.</p>
+    </div>
+    <div style="margin-top: 1.2rem;">
+      <button onclick="switchLang('zh')">中文</button>
+      <button onclick="switchLang('en')">English</button>
+    </div>
+    <footer>© 2025 Pdnode Team</footer>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('zh').style.display = lang === 'zh' ? 'block' : 'none';
+      document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
