@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>服务器错误 / Server Error</title>
+<title>Server Error</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
   body {
@@ -42,16 +42,8 @@
     padding: 0.7rem 1.5rem;
     border-radius: 10px;
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     user-select: all;
-  }
-  .details {
-    font-size: 1rem;
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    white-space: pre-wrap;
   }
   button {
     background: #4ca1af;
@@ -76,56 +68,15 @@
 </head>
 <body>
   <div class="container">
-    <div id="zh" class="content">
-      <h1>服务器内部错误</h1>
-      <p>抱歉，服务器暂时无法处理您的请求。请稍后再试。</p>
-      <div class="code">错误代码：500 / 522 - Internal Server Error / Connection Timed Out</div>
-      <div class="details">
-        Connection timed out
-        The initial connection between Cloudflare's network and the origin web server timed out. As a result, the web page cannot be displayed.
-        <br /><br />
-        Ray ID: <!-- Cloudflare会自动替换 -->
-        Your IP address: <!-- Cloudflare会自动替换 -->
-        <br />
-        Error reference number: 522
-        <br />
-        Cloudflare Location: San José
-      </div>
-      <button onclick="reloadPage()">重试</button>
-    </div>
-    <div id="en" class="content" style="display:none;">
-      <h1>Internal Server Error</h1>
-      <p>Sorry, the server is temporarily unable to handle your request. Please try again later.</p>
-      <div class="code">Error Code: 500 / 522 - Internal Server Error / Connection Timed Out</div>
-      <div class="details">
-        Connection timed out
-        The initial connection between Cloudflare's network and the origin web server timed out. As a result, the web page cannot be displayed.
-        <br /><br />
-        Ray ID: <!-- Cloudflare will replace -->
-        Your IP address: <!-- Cloudflare will replace -->
-        <br />
-        Error reference number: 522
-        <br />
-        Cloudflare Location: San José
-      </div>
-      ::CLOUDFLARE_ERROR_500S_BOX::
-      <button onclick="reloadPage()">Retry</button>
-    </div>
-    <div style="margin-top: 1.5rem;">
-      <button onclick="switchLang('zh')">中文</button>
-      <button onclick="switchLang('en')">English</button>
-    </div>
-    <footer>© 2025 Pdnode Team</footer>
+    <h1>Server Error</h1>
+    <p>Sorry, the server is temporarily unable to handle your request. Please try again later.</p>
+    <div class="code">Error Code: {{status_code}} - {{error_phrase}}</div>
+    <button onclick="location.reload()">Retry</button>
+    <p style="margin-top:1.5rem; font-size:0.9rem; color:#bbb;">
+      Host: {{host}}<br />
+      Time: {{timestamp}}
+    </p>
+    <footer>© 2025 Pdnode Team - Powered by Cloudflare</footer>
   </div>
-
-<script>
-  function switchLang(lang) {
-    document.getElementById('zh').style.display = lang === 'zh' ? 'block' : 'none';
-    document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
-  }
-  function reloadPage() {
-    location.reload();
-  }
-</script>
 </body>
 </html>
