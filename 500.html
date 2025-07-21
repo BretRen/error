@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Server Error</title>
+<title>服务器错误 / Server Error</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
   body {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #2c3e50, #4ca1af);
     color: #f0f0f0;
@@ -17,14 +18,13 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-    padding: 1rem;
   }
   .container {
     max-width: 600px;
-    background: rgba(0,0,0,0.5);
     padding: 2rem;
+    background: rgba(0,0,0,0.4);
     border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
   }
   h1 {
     font-size: 3rem;
@@ -32,64 +32,48 @@
     font-weight: 700;
   }
   p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
   }
   .code {
     font-family: monospace;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.7rem 1.5rem;
     border-radius: 10px;
-    margin-bottom: 2rem;
-    user-select: all;
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    user-select: all;
+  }
+  button {
+    background: #4ca1af;
+    border: none;
+    color: #fff;
+    padding: 0.7rem 1.6rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #3a8a95;
   }
   footer {
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #ccc;
   }
-  .info-block {
-    text-align: left;
-    margin-top: 1rem;
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: #ddd;
-    line-height: 1.4;
-  }
-  button {
-    background: #4ca1af;
-    border: none;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 1rem;
-  }
-  button:hover {
-    background: #3a8a95;
-  }
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>Server Error</h1>
-    <p>Sorry, the server is temporarily unable to handle your request. Please try again later.</p>
-    <div class="code">Error Code: {{status_code}} - {{error_phrase}}</div>
-    <button onclick="location.reload()">Retry</button>
-    <div class="info-block">
-      <p><strong>Connection timed out</strong></p>
-      <p>The initial connection between Cloudflare's network and the origin web server timed out. As a result, the web page cannot be displayed.</p>
-      <p><strong>Ray ID:</strong> {{ray_id}}</p>
-      <p><strong>Your IP address:</strong> {{ip}}</p>
-      <p><strong>Error reference number:</strong> {{status_code}}</p>
-      <p><strong>Cloudflare Location:</strong> {{colo_name}}</p>
-    </div>
-    <footer>© 2025 Pdnode Team - Powered by Cloudflare</footer>
+    <h1>服务器内部错误</h1>
+    <p>抱歉，服务器暂时无法处理您的请求。请稍后再试。</p>
+    <div class="code">错误代码：500 - Internal Server Error</div>
+    ::CLOUDFLARE_ERROR_500S_BOX::
+    <button onclick="location.reload()">重试</button>
+    <footer>© 2025 Pdnode Team</footer>
   </div>
 </body>
 </html>
